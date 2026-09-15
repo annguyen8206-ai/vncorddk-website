@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var _fetch = window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _fetch;
+            },
+            set: function(fn) {
+              _fetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              var _protoFetch = Window.prototype.fetch;
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() {
+                  return _protoFetch;
+                },
+                set: function(fn) {
+                  _protoFetch = fn;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          } catch (e2) {}
+        }
+      })();
+    </script>
+    <title>VNCORD-DK - Ngân Hàng Mô & Lưu Trữ Tế Bào Gốc</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="description" content="Website chính thức của Công ty Cổ phần Ngân hàng mô VNCORD – DK: Dịch vụ lưu trữ tế bào gốc, vận hành ngân hàng mô, nghiên cứu y sinh và hệ thống bệnh viện liên kết." />
+    <meta property="og:title" content="VNCORD-DK - Ngân Hàng Mô & Lưu Trữ Tế Bào Gốc" />
+    <meta property="og:description" content="Website chính thức của Công ty Cổ phần Ngân hàng mô VNCORD – DK: Dịch vụ lưu trữ tế bào gốc, vận hành ngân hàng mô, nghiên cứu y sinh và hệ thống bệnh viện liên kết." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vncorddk.com/" />
+    <meta property="og:image" content="https://vncorddk.com/og-image.png" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VNCORD-DK - Ngân Hàng Mô & Lưu Trữ Tế Bào Gốc" />
+    <meta name="twitter:description" content="Dịch vụ lưu trữ tế bào gốc máu cuống rốn, mô cuống rốn và tăng sinh tế bào gốc chuẩn y khoa tại Việt Nam." />
+    <link rel="canonical" href="https://vncorddk.com/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-100 selection:text-teal-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

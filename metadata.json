@@ -1,0 +1,6 @@
+{
+  "name": "VNCORD-DK - Ngân Hàng Mô & Lưu Trữ Tế Bào Gốc",
+  "description": "Website chính thức của Công ty Cổ phần Ngân hàng mô VNCORD – DK: Dịch vụ lưu trữ tế bào gốc, vận hành ngân hàng mô, nghiên cứu y sinh và hệ thống bệnh viện liên kết.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
