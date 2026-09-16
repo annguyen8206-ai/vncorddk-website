@@ -62,6 +62,14 @@ export const AdminPricing: React.FC = () => {
 
   const currentPkg = packages.find((p) => p.id === activePackageId) || packages[0];
 
+  const computeSavingsPercent = (totalPriceVnd: number, years: number, referenceAnnualVnd?: number) => {
+    if (!referenceAnnualVnd || years <= 0) return undefined;
+    const baseline = referenceAnnualVnd * years;
+    if (baseline <= 0) return undefined;
+    const pct = Math.round((1 - totalPriceVnd / baseline) * 100);
+    return pct > 0 ? pct : 0;
+  };
+
   const handlePriceChange = (yearIndex: number, newPriceVnd: number) => {
     const updated = packages.map((pkg) => {
       if (pkg.id === activePackageId) {
@@ -72,6 +80,7 @@ export const AdminPricing: React.FC = () => {
           ...newDurations[yearIndex],
           totalPriceVnd: newPriceVnd,
           annualVnd: annual,
+          savingsPercent: computeSavingsPercent(newPriceVnd, years, pkg.referenceAnnualVnd),
         };
         return {
           ...pkg,
@@ -81,6 +90,20 @@ export const AdminPricing: React.FC = () => {
       return pkg;
     });
 
+    setPackages(updated);
+  };
+
+  const handleReferenceAnnualChange = (newRefVnd: number) => {
+    const updated = packages.map((pkg) => {
+      if (pkg.id === activePackageId) {
+        const newDurations = pkg.durations.map((d) => ({
+          ...d,
+          savingsPercent: computeSavingsPercent(d.totalPriceVnd, d.years, newRefVnd),
+        }));
+        return { ...pkg, referenceAnnualVnd: newRefVnd, durations: newDurations };
+      }
+      return pkg;
+    });
     setPackages(updated);
   };
 
@@ -102,11 +125,18 @@ export const AdminPricing: React.FC = () => {
   const handleAddDuration = () => {
     const updated = packages.map((pkg) => {
       if (pkg.id === activePackageId) {
+        const years = 18;
+        const totalPriceVnd = 75000000;
         return {
           ...pkg,
           durations: [
             ...pkg.durations,
-            { years: 18, label: '18 Năm (Trưởng thành)', totalPriceVnd: 75000000, savingsPercent: 30 },
+            {
+              years,
+              label: '18 Năm (Trưởng thành)',
+              totalPriceVnd,
+              savingsPercent: computeSavingsPercent(totalPriceVnd, years, pkg.referenceAnnualVnd),
+            },
           ],
         };
       }
@@ -503,6 +533,23 @@ export const AdminPricing: React.FC = () => {
                 <Plus className="w-3.5 h-3.5" />
                 <span>Thêm mốc thời gian</span>
               </button>
+            </div>
+
+            <div className="mb-4 bg-sky-50/60 border border-sky-200 rounded-xl p-3.5">
+              <label className="block text-[10px] font-bold text-sky-900 uppercase tracking-wider mb-1">
+                Đơn giá tham chiếu / năm (VNĐ) — dùng để tự động tính % tiết kiệm
+              </label>
+              <input
+                type="number"
+                step={100000}
+                value={currentPkg.referenceAnnualVnd || ''}
+                onChange={(e) => handleReferenceAnnualChange(Number(e.target.value))}
+                placeholder="VD: 15000000"
+                className="w-full max-w-xs px-3 py-2 bg-white border border-sky-300 rounded-lg text-sm font-bold text-sky-700 font-mono focus:ring-2 focus:ring-sky-500"
+              />
+              <p className="text-[11px] text-slate-500 mt-1">
+                % tiết kiệm mỗi mốc = so sánh Tổng phí đã nhập với (Đơn giá tham chiếu × số năm). Để trống nếu chưa muốn hiển thị % tiết kiệm.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

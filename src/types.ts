@@ -32,6 +32,7 @@ export interface StoragePackage {
   isConsultationChoice?: boolean;
   isActive?: boolean;
   benefits: string[];
+  referenceAnnualVnd?: number;
   durations: {
     years: number;
     label: string;
