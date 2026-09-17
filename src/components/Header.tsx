@@ -179,6 +179,20 @@ export const Header: React.FC<HeaderProps> = ({
               Về Chúng Tôi
             </button>
 
+            {/* Công nghệ */}
+            <button
+              onClick={() => {
+                onNavigate('technology');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`transition-colors py-2 cursor-pointer ${
+                currentPage === 'technology' ? 'text-teal-600 font-bold' : 'hover:text-teal-600'
+              }`}
+              id="nav-technology-btn"
+            >
+              Công Nghệ
+            </button>
+
             {/* Dịch vụ Dropdown Menu */}
             <div className="relative" ref={dropdownRef}>
               <button
@@ -347,6 +361,20 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             Về Chúng Tôi
+          </button>
+
+          {/* Công nghệ */}
+          <button
+            onClick={() => {
+              onNavigate('technology');
+              setMobileMenuOpen(false);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className={`w-full text-left px-3 py-2.5 text-sm font-bold rounded-xl transition-colors cursor-pointer ${
+              currentPage === 'technology' ? 'bg-teal-50 text-teal-700' : 'text-slate-700 hover:bg-slate-50'
+            }`}
+          >
+            Công Nghệ
           </button>
 
           {/* Dịch vụ (có 4 submenu) */}

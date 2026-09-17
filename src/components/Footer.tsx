@@ -174,6 +174,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenConsultation,
               </li>
               <li className="pt-2 border-t border-slate-200">
                 <button
+                  onClick={() => handleNav('technology')}
+                  className="text-slate-600 hover:text-teal-700 transition-colors flex items-center gap-1.5 cursor-pointer"
+                >
+                  <ChevronRight className="w-3.5 h-3.5 text-sky-600 shrink-0" />
+                  <span>Công nghệ & Tiêu chuẩn vận hành</span>
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => handleNav('news')}
                   className="text-slate-600 hover:text-teal-700 transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
@@ -237,6 +246,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal, onOpenConsultation,
             <span className="text-teal-700 font-semibold font-mono">MST: 0317291365</span>
             <span>•</span>
             <span className="text-slate-500">Hệ thống Y sinh Chuẩn AABB</span>
+            <span>•</span>
+            <span className="text-slate-500">Thành viên hệ sinh thái DK Group</span>
             <span>•</span>
             {settings.facebookUrl && (
               <a

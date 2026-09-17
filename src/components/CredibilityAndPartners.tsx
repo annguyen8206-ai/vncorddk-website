@@ -5,9 +5,10 @@ import { REVIEWS } from '../data/mockData';
 interface CredibilityAndPartnersProps {
   onOpenConsultation: () => void;
   onOpenLegal: () => void;
+  onNavigateTechnology: () => void;
 }
 
-export const CredibilityAndPartners: React.FC<CredibilityAndPartnersProps> = ({ onOpenConsultation, onOpenLegal }) => {
+export const CredibilityAndPartners: React.FC<CredibilityAndPartnersProps> = ({ onOpenConsultation, onOpenLegal, onNavigateTechnology }) => {
   const [activeTab, setActiveTab] = useState<'hop-tac' | 'danh-gia' | 'tieu-chuan'>('hop-tac');
 
   return (
@@ -273,6 +274,17 @@ export const CredibilityAndPartners: React.FC<CredibilityAndPartnersProps> = ({ 
                   Hệ thống bình trữ Nitơ lỏng -196°C duy trì hoàn toàn bằng nguyên lý vật lý của nitơ lỏng, trang bị bồn cấp bù tự động và hệ thống cảnh báo nhiệt độ từ xa qua IoT 24/7.
                 </p>
               </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <button
+                onClick={onNavigateTechnology}
+                className="text-teal-700 font-bold text-xs sm:text-sm hover:underline inline-flex items-center gap-1 cursor-pointer"
+                id="tieu-chuan-tab-view-technology-btn"
+              >
+                <span>Tìm hiểu đầy đủ công nghệ & quy trình vận hành</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
         )}

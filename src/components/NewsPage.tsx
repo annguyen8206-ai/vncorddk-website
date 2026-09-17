@@ -29,7 +29,7 @@ export const NewsPage: React.FC<NewsPageProps> = ({ onOpenConsultation }) => {
     return () => window.removeEventListener('vncord_news_updated', handleUpdate);
   }, []);
 
-  const categories = ['all', 'Nghiên cứu & Ứng dụng', 'Hợp tác y tế', 'Công nghệ tế bào', 'Cẩm nang sản phụ'];
+  const categories = ['all', 'Kiến thức tế bào', 'Nghiên cứu & Ứng dụng', 'Hợp tác y tế', 'Công nghệ tế bào', 'Cẩm nang sản phụ'];
 
   const filteredArticles = articles.filter((art) => {
     const matchesSearch =

@@ -12,6 +12,7 @@ export const FaqSection: React.FC = () => {
 
   const categories = [
     { id: 'all', label: 'Tất cả câu hỏi' },
+    { id: 'kien-thuc', label: 'Kiến thức cơ bản' },
     { id: 'quy-trinh', label: 'Quy trình thu thập' },
     { id: 'ung-dung', label: 'Ứng dụng điều trị' },
     { id: 'chi-phi', label: 'Chi phí & Thanh toán' },

@@ -228,6 +228,16 @@ export const REVIEWS: ReviewItem[] = [
 
 export const FAQS: FaqItem[] = [
   {
+    category: 'kien-thuc',
+    question: 'Ngân hàng mô là gì?',
+    answer: 'Ngân hàng mô là đơn vị chuyên môn thực hiện việc thu thập, xử lý, kiểm định chất lượng và lưu trữ dài hạn các loại mô, tế bào sinh học của con người (như máu và mô dây rốn) trong điều kiện được kiểm soát nghiêm ngặt, nhằm bảo tồn giá trị sinh học phục vụ nhu cầu y học và nghiên cứu phù hợp trong tương lai.',
+  },
+  {
+    category: 'kien-thuc',
+    question: 'Tế bào gốc là gì?',
+    answer: 'Tế bào gốc là loại tế bào nguyên thủy của cơ thể, có khả năng tự tái tạo và biệt hóa thành nhiều loại tế bào chuyên biệt khác nhau. Tế bào gốc thu thập từ máu và mô cuống rốn ngay sau khi trẻ chào đời được xem là nguồn tế bào trẻ, chất lượng cao, có tiềm năng ứng dụng trong điều trị nhiều bệnh lý về máu, miễn dịch và y học tái tạo.',
+  },
+  {
     category: 'quy-trinh',
     question: 'Việc thu thập máu và mô cuống rốn có gây đau hoặc nguy hiểm cho mẹ và bé sơ sinh không?',
     answer: 'Hoàn toàn KHÔNG. Việc thu thập chỉ được thực hiện SAU KHI em bé đã chào đời an toàn và dây rốn đã được kẹp cắt. Đây là phần sinh phẩm trước đây thường bị bỏ đi như rác thải y tế, nay được thu hồi vô trùng nên không hề gây đau đớn hay ảnh hưởng gì tới sức khỏe của mẹ và em bé.',
@@ -260,6 +270,26 @@ export const FAQS: FaqItem[] = [
 ];
 
 export const NEWS_ARTICLES = [
+  {
+    id: 'news-5',
+    title: 'Kiến thức cơ bản: Ngân hàng mô, tế bào gốc và lý do nên tìm hiểu sớm trong thai kỳ',
+    category: 'Kiến thức tế bào',
+    date: '15/09/2025',
+    readTime: '5 phút đọc',
+    summary: 'Giải thích dễ hiểu về ngân hàng mô, tế bào gốc, nguồn mẫu có thể lưu trữ và những nguyên tắc cơ bản cha mẹ nên biết trước khi quyết định.',
+    author: 'Ban Biên Tập VNCORD-DK',
+    tags: ['Kiến thức tế bào', 'Ngân hàng mô', 'Tế bào gốc là gì'],
+    featured: true,
+    coverImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200',
+    coverImageAlt: 'Minh họa khái niệm ngân hàng mô và tế bào gốc dành cho cha mẹ tìm hiểu trước sinh',
+    coverImageCaption: 'Kiến thức nền tảng về ngân hàng mô và tế bào gốc dành cho gia đình',
+    content: [
+      'Ngân hàng mô là đơn vị chuyên môn thực hiện thu thập, xử lý, kiểm định chất lượng và lưu trữ dài hạn các loại mô, tế bào sinh học của con người trong điều kiện được kiểm soát nghiêm ngặt, phục vụ nhu cầu y học và nghiên cứu phù hợp trong tương lai.',
+      'Tế bào gốc là loại tế bào nguyên thủy có khả năng tự tái tạo và biệt hóa thành nhiều loại tế bào chuyên biệt khác nhau trong cơ thể. Tế bào gốc thu thập từ máu và mô cuống rốn ngay sau khi trẻ chào đời được xem là nguồn tế bào trẻ, có tiềm năng ứng dụng cao.',
+      'Nguồn mẫu phổ biến nhất hiện nay là máu cuống rốn (chứa tế bào gốc tạo máu - HSC) và mô cuống rốn/thạch Wharton (chứa tế bào gốc trung mô - MSC), được thu thập ngay sau khi em bé chào đời và dây rốn đã được kẹp cắt, không ảnh hưởng đến mẹ và bé.',
+      'Sau khi thu thập, mẫu trải qua quy trình tiếp nhận, xử lý, kiểm tra chất lượng và bảo quản đông sâu trong nitơ lỏng. Gia đình cần lưu ý: quyết định về loại tế bào phù hợp, thời gian lưu trữ và phạm vi ứng dụng y học nên được trao đổi trực tiếp cùng đội ngũ tư vấn chuyên môn để có thông tin chính xác, phù hợp với từng trường hợp cụ thể.',
+    ],
+  },
   {
     id: 'news-1',
     title: 'Hội nghị khoa học y sinh: Bước đột phá trong ứng dụng tế bào gốc dây rốn điều trị bệnh lý thần kinh',

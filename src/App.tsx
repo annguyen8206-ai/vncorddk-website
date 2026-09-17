@@ -5,6 +5,7 @@ import { AboutAndLegal } from './components/AboutAndLegal';
 import { ProcessAndPricing } from './components/ProcessAndPricing';
 import { CredibilityAndPartners } from './components/CredibilityAndPartners';
 import { HospitalNetwork } from './components/HospitalNetwork';
+import { EcosystemSection } from './components/EcosystemSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -12,6 +13,7 @@ import { LegalInfoModal } from './components/LegalInfoModal';
 
 // Dedicated separate pages
 import { AboutPage } from './components/AboutPage';
+import { TechnologyPage } from './components/TechnologyPage';
 import { CordBloodServicePage } from './components/CordBloodServicePage';
 import { TissueServicePage } from './components/TissueServicePage';
 import { ExpansionServicePage } from './components/ExpansionServicePage';
@@ -318,12 +320,16 @@ export default function App() {
             <CredibilityAndPartners
               onOpenConsultation={() => handleOpenConsultation()}
               onOpenLegal={() => setIsLegalModalOpen(true)}
+              onNavigateTechnology={() => handleNavigate('technology')}
             />
 
             {/* Aspect (C): Hospital Network & Partner Locator */}
             <HospitalNetwork
               onSelectHospital={handleSelectHospital}
             />
+
+            {/* DK Group Ecosystem: supporting brand-affiliation layer */}
+            <EcosystemSection />
 
             {/* FAQs */}
             <FaqSection />
@@ -335,6 +341,13 @@ export default function App() {
           <AboutPage
             onOpenConsultation={() => handleOpenConsultation()}
             onOpenLegal={() => setIsLegalModalOpen(true)}
+          />
+        )}
+
+        {/* 2b. Trang Công Nghệ */}
+        {currentPage === 'technology' && (
+          <TechnologyPage
+            onOpenConsultation={() => handleOpenConsultation()}
           />
         )}
 

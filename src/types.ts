@@ -65,12 +65,13 @@ export interface ReviewItem {
 export interface FaqItem {
   question: string;
   answer: string;
-  category: 'quy-trinh' | 'chi-phi' | 'ung-dung' | 'phap-ly';
+  category: 'kien-thuc' | 'quy-trinh' | 'chi-phi' | 'ung-dung' | 'phap-ly';
 }
 
 export type PageId =
   | 'home'
   | 'about'
+  | 'technology'
   | 'service-cord-blood'
   | 'service-tissue'
   | 'service-expansion'
