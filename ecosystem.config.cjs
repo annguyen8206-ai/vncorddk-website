@@ -4,13 +4,14 @@ module.exports = {
   apps: [
     {
       name: 'vncorddk-api',
-      script: 'tsx',
-      args: 'server/index.ts',
-      cwd: '/var/www/vncorddk',
-      interpreter: 'none',
+      script: 'server-dist/server.mjs',
+      cwd: '/var/www/vncorddk-website',
       env_production: {
         NODE_ENV: 'production',
         PORT: 3001,
+        // Persistent path OUTSIDE the deploy directory so rebuilds/redeploys
+        // never delete or reset admin-edited data (packages, leads, settings...).
+        DB_FILE_PATH: '/var/lib/vncorddk/vncord-data.json',
       },
       // Tự động restart nếu crash
       autorestart: true,

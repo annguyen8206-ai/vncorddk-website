@@ -5,7 +5,11 @@ import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DB_PATH = path.resolve(__dirname, '..', 'vncord-data.json');
+// DB_FILE_PATH lets production point at a persistent path outside the deploy
+// directory, so redeploys/rebuilds never wipe admin-edited data.
+const DB_PATH = process.env.DB_FILE_PATH
+  ? path.resolve(process.env.DB_FILE_PATH)
+  : path.resolve(__dirname, '..', 'vncord-data.json');
 
 export interface DbSchema {
   settings: Record<string, string>;
