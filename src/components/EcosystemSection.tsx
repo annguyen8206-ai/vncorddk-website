@@ -37,13 +37,13 @@ export const EcosystemSection: React.FC = () => {
           {ECOSYSTEM_MEMBERS.map((member) => (
             <div
               key={member.name}
-              className="flex flex-col items-center justify-center gap-2.5 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 w-[calc(50%-0.5rem)] sm:w-[calc(25%-0.94rem)] h-28 sm:h-32 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
+              className="flex flex-col items-center justify-center gap-2.5 bg-white rounded-xl border border-slate-200 p-3 sm:p-4 w-[calc(50%-0.5rem)] sm:w-[calc(25%-0.94rem)] min-w-0 h-36 sm:h-40 grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
             >
               {member.logo ? (
                 <img
                   src={member.logo}
                   alt={member.name}
-                  className="max-h-12 sm:max-h-14 max-w-full object-contain"
+                  className="max-h-28 sm:max-h-32 max-w-[92%] object-contain"
                   draggable={false}
                 />
               ) : (
